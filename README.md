@@ -1,1 +1,16 @@
-1. Caesar Cipher (Substitusi Pergeseran)Konsep Dasar: Algoritma substitusi abjad-tunggal di mana setiap huruf pada plaintext digeser sejauh nilai kunci integer $k$ secara tetap.   Contoh Kasus / Run:Input: Pesan = "Halo Kawan", Kunci ($k$) = 3Output (Cipherteks): "Kdrop Ndzqd"Penjelasan Hasil Run:Huruf H digeser 3 langkah ke kanan menjadi K, a menjadi d, l menjadi o, dan seterusnya.Karakter selain huruf (seperti spasi) diabaikan dan dibiarkan tetap.Pada proses dekripsi, cipherteks "Kdrop Ndzqd" dikembalikan ke kunci $k = 3$, sehingga menghasilkan kembali plaintext aslinya yaitu "Halo Kawan".2. Monoalphabetic Substitution Cipher (Substitusi Abjad Acak dengan Kunci)Konsep Dasar: Mengganti setiap huruf plaintext dengan huruf lain berdasarkan tabel substitusi acak yang dibentuk dari kata kunci (keyword) agar pola pesannya lebih sulit ditebak dibanding Caesar.   Contoh Kasus / Run:Input: Pesan = "Kriptografi", Kunci = "kunci"Output (Cipherteks): "Mjixhfyomks"Penjelasan Hasil Run:Kata kunci "kunci" diproses untuk menghilangkan duplikat huruf, lalu dijadikan awal dari tabel alfabet substitusi (disusul sisa huruf alfabet lainnya secara berurutan).Setiap huruf pada pesan "Kriptografi" dipetakan satu-persatu ke tabel baru tersebut, menghasilkan teks acak "Mjixhfyomks".Ketika didekripsi menggunakan kata kunci yang sama, program membaca tabel pemetaan terbalik untuk mengembalikan pesan ke bentuk semula.3. Columnar Transposition Cipher (Transposisi Kolom)Konsep Dasar: Berbeda dengan dua cipher sebelumnya yang mengganti bentuk huruf (substitusi), cipher ini murni mengubah posisi atau mengacak susunan huruf (transposisi) menggunakan matriks berdasarkan kata kunci.   Contoh Kasus / Run:Input: Pesan = "sistem informasi", Kunci = "TOMBAK"Output (Cipherteks): "IITSINORSMSTFOAI"Penjelasan Hasil Run:Spasi pada pesan dihilangkan, lalu teks dimasukkan ke dalam kotak matriks yang jumlah kolomnya menyesuaikan panjang kata kunci (TOMBAK = 6 kolom).   Kolom matriks diurutkan kembali berdasarkan urutan abjad dari kata kunci (B $\rightarrow$ A $\rightarrow$ K $\rightarrow$ M $\rightarrow$ O $\rightarrow$ T), lalu dibaca secara vertikal (kolom demi kolom) dari atas ke bawah.   Hasil akhirnya berupa rentetan huruf (IITSINORSMSTFOAI) yang bentuk huruf aslinya sebenarnya masih sama persis dengan pesan awal, tetapi posisi urutannya sudah teracak total.
+# 🔐 Dokumentasi Aplikasi Kriptografi Klasik (Python)
+
+Repositori ini berisi implementasi 3 program aplikasi **Kriptografi Klasik** (Teknik Substitusi dan Transposisi) menggunakan bahasa pemrograman Python. Berikut adalah rangkuman lengkap kode, cara menjalankan, beserta contoh hasil *run* (output) dari ketiga aplikasi tersebut.
+
+---
+
+## 1. Aplikasi Caesar Cipher (Substitusi Pergeseran)
+Algoritma substitusi abjad-tunggal di mana setiap huruf pada *plaintext* digeser sejauh nilai kunci integer $k$ secara konstan.
+
+### 🖥️ Contoh Hasil Run & Eksekusi:
+```text
+=== PROGRAM CAESAR CIPHER ===
+Ketikkan pesan: Halo Kawan
+Masukkan jumlah pergeseran (k): 3
+Cipherteks: Kdrop Ndzqd
+Plainteks: Halo Kawan
